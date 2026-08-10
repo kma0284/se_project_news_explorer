@@ -1,0 +1,34 @@
+.news-card-list {
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  gap: 16px;
+  justify-content: center;
+}
+.news-card {
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 1250px) {
+  .news-card-list {
+    grid-template-columns: repeat(2, 400px);
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .news-card-list {
+    grid-template-columns: 400px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .news-card-list {
+    grid-template-columns: 1fr;
+  }
+
+  .news-card {
+    width: 100%;
+  }
+}
