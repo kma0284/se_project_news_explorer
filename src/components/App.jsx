@@ -5,9 +5,11 @@ import Main from "./Main";
 import Footer from "./Footer";
 import LoginModal from "./LoginModal";
 import RegisterModal from "./RegisterModal";
+import RegistrationSuccessModal from "./RegistrationSuccessModal";
 import SavedNews from "./SavedNews.jsx";
 import { getNews } from "../utils/newsApi";
 import { getCurrentUser, logout } from "../utils/auth";
+import "../blocks/App.css";
 
 function App() {
   const location = useLocation();
@@ -43,14 +45,8 @@ function App() {
     setActiveModal("register");
   };
 
-  const handleRegisterUser = (user) => {
-    setCurrentUser(user);
-    setIsLoggedIn(true);
-    setActiveModal(null);
-
-    const saved = localStorage.getItem(`savedArticles_${user.email}`);
-
-    setSavedArticles(saved ? JSON.parse(saved) : []);
+  const handleRegisterUser = () => {
+    setActiveModal("register-success");
   };
 
   const handleLogin = (user) => {
@@ -199,6 +195,12 @@ function App() {
         isOpen={activeModal === "register"}
         onClose={handleCloseModal}
         onRegister={handleRegisterUser}
+        onLogin={handleSignIn}
+      />
+
+      <RegistrationSuccessModal
+        isOpen={activeModal === "register-success"}
+        onClose={handleCloseModal}
         onLogin={handleSignIn}
       />
     </div>

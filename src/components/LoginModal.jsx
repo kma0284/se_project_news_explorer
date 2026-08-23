@@ -1,14 +1,37 @@
 import { useState } from "react";
 import ModalWithForm from "./ModalWithForm";
 import { login } from "../utils/auth";
+import "../blocks/LoginModal.css";
 
 function LoginModal({ isOpen, onClose, onRegister, onLogin }) {
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState({
+    email: "",
+    password: "",
+    general: "",
+  });
+
   const [isValid, setIsValid] = useState(false);
 
   const handleInput = (event) => {
-    setIsValid(event.currentTarget.checkValidity());
-    setError("");
+    const input = event.target;
+
+    setIsValid(input.form.checkValidity());
+
+    let error = "";
+
+    if (input.name === "email" && input.value && !input.checkValidity()) {
+      error = "Invalid email";
+    }
+
+    if (input.name === "password" && !input.value) {
+      error = "Please enter your password";
+    }
+
+    setErrors((prev) => ({
+      ...prev,
+      [input.name]: error,
+      general: "",
+    }));
   };
 
   const handleSubmit = (event) => {
@@ -17,7 +40,11 @@ function LoginModal({ isOpen, onClose, onRegister, onLogin }) {
     const email = event.target.email.value.trim();
     const password = event.target.password.value;
 
-    setError("");
+    setErrors({
+      email: "",
+      password: "",
+      general: "",
+    });
 
     login(email, password)
       .then((user) => {
@@ -25,7 +52,10 @@ function LoginModal({ isOpen, onClose, onRegister, onLogin }) {
         onLogin(user);
       })
       .catch((err) => {
-        setError(err.message);
+        setErrors((prev) => ({
+          ...prev,
+          general: err.message,
+        }));
       });
   };
 
@@ -65,6 +95,8 @@ function LoginModal({ isOpen, onClose, onRegister, onLogin }) {
         required
       />
 
+      {errors.email && <p className="modal__error">{errors.email}</p>}
+
       <label className="modal__label" htmlFor="login-password">
         Password
       </label>
@@ -78,7 +110,9 @@ function LoginModal({ isOpen, onClose, onRegister, onLogin }) {
         required
       />
 
-      {error && <p className="modal__error">{error}</p>}
+      {errors.password && <p className="modal__error">{errors.password}</p>}
+
+      {errors.general && <p className="modal__error">{errors.general}</p>}
     </ModalWithForm>
   );
 }

@@ -1,14 +1,19 @@
 import "../blocks/NoResults.css";
+import notFoundIcon from "../assets/notfound.svg";
 
 function NoResults() {
   return (
     <section className="no-results">
-      <div className="no-results__icon">🔎</div>
+      <img
+        className="no-results__icon"
+        src={notFoundIcon}
+        alt="not found icon"
+      />
 
       <h2 className="no-results__title">Nothing found</h2>
 
       <p className="no-results__text">
-        Sorry, nothing matched your search. Try a different keyword.
+        Sorry, but nothing matched your search terms.
       </p>
     </section>
   );

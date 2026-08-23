@@ -11,9 +11,10 @@ function About() {
           <h2 className="about__title">About the author</h2>
 
           <p className="about__description">
-            This project was created as part of my software engineering journey.
-            I built News Explorer to make it easy to search for current news,
-            discover interesting articles, and save stories to read later.
+            Hello my name is Katelynn. This project was created as part of my
+            software engineering journey. I built News Explorer to make it easy
+            to search for current news, discover interesting articles, and save
+            stories to read later.
           </p>
 
           <p className="about__description">

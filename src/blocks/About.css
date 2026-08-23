@@ -11,6 +11,7 @@
   align-items: center;
   gap: 56px;
   box-sizing: border-box;
+  max-width: 1440px;
 }
 
 .about__image {
@@ -24,6 +25,10 @@
 .about__text {
   flex: 1;
   max-width: 600px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .about__title {

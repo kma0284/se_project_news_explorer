@@ -7,7 +7,7 @@ function Footer() {
     <footer className="footer">
       <div className="footer__content">
         <p className="footer__copyright">
-          © 2026 News Explorer. All rights reserved.
+          © 2026 News Explorer. Powered by News API
         </p>
 
         <nav className="footer__navigation">

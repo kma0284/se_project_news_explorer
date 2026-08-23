@@ -19,33 +19,24 @@
 }
 .main__show-more {
   display: block;
-
   width: 288px;
   height: 64px;
-
-  margin: 64px auto 80px;
-
+  margin: 32px auto 0;
   padding: 0;
 
-  border: none;
-  border-radius: 8px;
-
   background-color: #fff;
-  color: #1a1b22;
+  border: none;
+  border-radius: 999px;
 
   font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 24px;
-  text-align: center;
+  color: #1a1b22;
 
   cursor: pointer;
-
-  transition:
-    background-color 0.2s ease,
-    opacity 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 .main__show-more:hover {
-  background-color: #f5f6f7;
+  background-color: #e6e6e6;
 }

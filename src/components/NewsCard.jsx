@@ -62,19 +62,24 @@ function NewsCard({
           } ${isSavedPage ? "news-card__save_delete" : ""}`}
           type="button"
           onClick={handleSave}
-          title={
-            isSavedPage
-              ? "Remove from favorites"
-              : !isLoggedIn
-                ? "Sign in to save articles."
-                : "Save article"
-          }
         >
           <img
             className="news-card__save-icon"
             src={isSavedPage ? trashIcon : isSaved ? flagFilledIcon : flagIcon}
             alt=""
           />
+
+          {!isLoggedIn && !isSavedPage && (
+            <span className="news-card__signin-tooltip">
+              Sign in to save articles
+            </span>
+          )}
+
+          {isSavedPage && (
+            <span className="news-card__delete-tooltip">
+              Remove from favorites
+            </span>
+          )}
         </button>
       </div>
 

@@ -1,18 +1,7 @@
 import { useEffect } from "react";
 import closeIcon from "../assets/close.svg";
-import "../blocks/ModalWithForm.css";
 
-function ModalWithForm({
-  title,
-  children,
-  buttonText,
-  isOpen,
-  onClose,
-  onSubmit,
-  footer,
-  isValid,
-  onInput,
-}) {
+function Modal({ isOpen, onClose, children }) {
   useEffect(() => {
     if (!isOpen) {
       return undefined;
@@ -42,7 +31,7 @@ function ModalWithForm({
   };
 
   return (
-    <div className="modal" onClick={handleOverlayClick}>
+    <div className="modal" onMouseDown={handleOverlayClick}>
       <div className="modal__content">
         <button
           className="modal__close"
@@ -53,20 +42,10 @@ function ModalWithForm({
           <img src={closeIcon} alt="" />
         </button>
 
-        <form className="modal__form" onSubmit={onSubmit} onInput={onInput}>
-          <h2 className="modal__title">{title}</h2>
-
-          {children}
-
-          <button className="modal__submit" type="submit" disabled={!isValid}>
-            {buttonText}
-          </button>
-
-          {footer}
-        </form>
+        {children}
       </div>
     </div>
   );
 }
 
-export default ModalWithForm;
+export default Modal;

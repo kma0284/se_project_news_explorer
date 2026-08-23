@@ -20,7 +20,12 @@
 /* =========================
    MODAL CONTENT
    ========================= */
-
+.modal__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .modal__content {
   position: relative;
 
@@ -43,13 +48,11 @@
 .modal__close {
   position: absolute;
 
-  top: 24px;
+  top: -40px;
+  right: -40px;
 
-  /* places X outside right side of 430px modal */
-  left: calc(50% + 231px);
-
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
 
   padding: 0;
 
@@ -64,10 +67,7 @@
   line-height: 32px;
 
   cursor: pointer;
-
   z-index: 1001;
-
-  transition: color 0.2s ease;
 }
 
 .modal__close:hover {
@@ -107,7 +107,7 @@
 .modal__label {
   margin: 0 0 8px;
 
-  color: #1a1b22;
+  color: #2f71e5;
 
   font-family: "Inter", sans-serif;
   font-weight: 400;
@@ -187,7 +187,7 @@
   margin: -12px 0 8px;
 
   color: #d93025;
-
+  text-align: center;
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 12px;

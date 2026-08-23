@@ -15,13 +15,14 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  max-width: 1440px;
 }
 
 .header__content {
   position: relative;
   z-index: 1;
   height: 100%;
-  padding: 24px 40px;
+  padding: 0;
   box-sizing: border-box;
   max-width: 1440px;
 }
@@ -110,10 +111,18 @@
 
 .header__top {
   position: relative;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 19px 104px 13px 104px;
+
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  padding: 19px 40px 13px;
+
+  box-sizing: border-box;
 }
 
 .header__top::after {
@@ -125,23 +134,33 @@
   height: 2px;
   background-color: rgba(255, 255, 255, 0.5);
   z-index: 1;
+  max-width: 1440px;
 }
 
 .header__navigation {
   display: flex;
   align-items: center;
   gap: 24px;
+
   position: relative;
-  z-index: 2;
+  z-index: 5;
+
+  flex-shrink: 0;
 }
 
 .header__link {
   position: relative;
+
   display: flex;
   align-items: center;
+
   height: 48px;
+
   color: #fff;
   text-decoration: none;
+
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .header__link_active::after {
@@ -152,7 +171,7 @@
   bottom: -13px;
   height: 3px;
   background-color: #fff;
-  border-radius: 3px 3px 0 0;
+  /* border-radius: 3px 3px 0 0; */
   z-index: 3;
   width: 100%;
 }
@@ -196,7 +215,57 @@
 
   cursor: pointer;
 }
+.header__user {
+  width: auto;
+  min-width: 112px;
+  height: 48px;
 
+  box-sizing: border-box;
+
+  border: 1px solid #fff;
+  border-radius: 999px;
+
+  background-color: transparent;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+  padding: 0 16px;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+  white-space: nowrap;
+
+  position: relative;
+  z-index: 5;
+}
+
+.header_saved .header__user {
+  border-color: #1a1b22;
+  color: #1a1b22;
+}
+.header__logout-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: #ffffff;
+}
+.header:not(.header_saved) .header__logout-icon {
+  filter: none;
+}
+
+/* Saved Articles — dark icon */
+.header_saved .header__logout-icon {
+  filter: brightness(0);
+}
 .header__sign-up:hover {
   background-color: rgba(255, 255, 255, 0.15);
 }

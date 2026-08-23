@@ -250,10 +250,6 @@
    SAVE / DELETE TOOLTIP
    ========================= */
 
-/* =========================
-   SAVE / DELETE TOOLTIP
-   ========================= */
-
 .news-card__save {
   position: absolute;
   top: 24px;
@@ -275,27 +271,24 @@
 
   cursor: pointer;
 }
+
 /* =========================
-   HOVER TOOLTIP
+   TOOLTIP BASE
    ========================= */
 
-.news-card__save::after {
+.news-card__signin-tooltip,
+.news-card__delete-tooltip {
   position: absolute;
-  top: 48px;
-  right: 0;
 
-  padding: 8px 12px;
+  top: 0;
+  right: 48px;
 
-  background: #000;
-  color: #fff;
+  height: 40px;
+  box-sizing: border-box;
 
-  border-radius: 4px;
-
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   white-space: nowrap;
 
@@ -304,111 +297,52 @@
   pointer-events: none;
 
   z-index: 100;
-
-  transition:
-    opacity 0.15s ease,
-    visibility 0.15s ease;
 }
 
-/* Signed-out save button */
-.news-card__save:not(.news-card__save_saved):not(
-    .news-card__save_delete
-  )::after {
-  content: "Sign in to save articles.";
-}
+/* =========================
+   SIGN-IN TOOLTIP
+   ========================= */
 
-/* Delete button on Saved News */
-.news-card__save_delete::after {
-  content: "Remove from favorites";
-}
+.news-card__signin-tooltip {
+  width: 182px;
 
-/* Show tooltip */
-.news-card__save:hover::after {
-  opacity: 1;
-  visibility: visible;
-}
+  background-color: #ffffff;
+  border-radius: 10px;
 
-/* Delete button hover message */
-.news-card__save_delete {
-  position: absolute;
-}
-
-.news-card__save_delete::after {
-  content: "Remove from favorites";
-
-  position: absolute;
-  top: 48px;
-  right: 0;
-
-  padding: 8px 12px;
-
-  background-color: #000;
-  color: #fff;
-
-  border-radius: 4px;
+  color: #1a1b22;
 
   font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
-  text-align: center;
-
-  white-space: nowrap;
-
-  opacity: 0;
-  visibility: hidden;
-
-  pointer-events: none;
-
-  z-index: 100;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
 }
 
-.news-card__save_delete:hover::after {
+.news-card__save:hover .news-card__signin-tooltip {
   opacity: 1;
   visibility: visible;
 }
 
-/* Add to favorites hover message */
-.news-card__save:not(.news-card__save_saved):not(
-    .news-card__save_delete
-  )::after {
-  content: "Add to favorites";
+/* =========================
+   DELETE TOOLTIP
+   ========================= */
 
-  position: absolute;
-  top: 48px;
-  right: 0;
+.news-card__delete-tooltip {
+  width: 182px;
 
-  padding: 8px 12px;
+  color: #000000;
+  border-radius: 10px;
 
-  background-color: #000;
-  color: #fff;
+  background-color: #ffffff;
 
-  border-radius: 4px;
+  padding: 0 12px;
 
   font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
-  text-align: center;
-
-  white-space: nowrap;
-
-  opacity: 0;
-  visibility: hidden;
-
-  pointer-events: none;
-
-  z-index: 100;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
 }
 
-.news-card__save:not(.news-card__save_saved):not(
-    .news-card__save_delete
-  ):hover::after {
+.news-card__save:hover .news-card__delete-tooltip {
   opacity: 1;
   visibility: visible;
-}
-
-/* Signed-out user */
-.news-card__save_signed_out::after {
-  content: "Sign in to save articles." !important;
 }

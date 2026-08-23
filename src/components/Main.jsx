@@ -4,6 +4,7 @@ import NoResults from "./NoResults";
 import ErrorMessage from "./ErrorMessage";
 import About from "./About";
 import "../blocks/Main.css";
+import "../blocks/fonts.css";
 
 function Main({
   articles,
@@ -20,8 +21,6 @@ function Main({
 }) {
   return (
     <main className="main">
-      {!hasSearched && <About />}
-
       {isLoading && <Preloader />}
 
       {!isLoading && error && <ErrorMessage />}
@@ -54,6 +53,8 @@ function Main({
       {!isLoading && !error && hasSearched && articles.length === 0 && (
         <NoResults />
       )}
+
+      <About />
     </main>
   );
 }

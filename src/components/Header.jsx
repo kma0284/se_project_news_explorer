@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import headerImage from "../assets/header.svg";
 import SearchForm from "./SearchForm";
 import "../blocks/Header.css";
+import logoutIcon from "../assets/logout.svg";
 
 function Header({
   isLoggedIn,
@@ -43,7 +44,12 @@ function Header({
 
             {isLoggedIn ? (
               <button className="header__user" type="button" onClick={onLogout}>
-                {currentUser?.name}
+                <span>{currentUser?.name}</span>
+                <img
+                  className="header__logout-icon"
+                  src={logoutIcon}
+                  alt="Log out"
+                />
               </button>
             ) : (
               <>
