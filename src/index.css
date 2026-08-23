@@ -1,13 +1,3 @@
-:root {
-  font-family: "Roboto", sans-serif;
-  color: #1a1b22;
-  background: #fff;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -16,33 +6,11 @@ html,
 body,
 #root {
   width: 100%;
-  min-width: 100%;
   min-height: 100%;
   margin: 0;
   padding: 0;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  background: #fff;
-}
-
-button,
-input,
-textarea {
-  font: inherit;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-p {
-  margin: 0;
+  font-family: "Roboto", Arial, sans-serif;
 }

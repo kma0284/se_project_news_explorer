@@ -1,35 +1,62 @@
+/* =========================
+   ABOUT
+   ========================= */
+
 .about {
   width: 100%;
   background-color: #fff;
 }
 
+/* =========================
+   ABOUT CONTENT
+   ========================= */
+
 .about__content {
   width: 100%;
+  max-width: 1440px;
   min-height: 624px;
+
+  margin: 0 auto;
   padding: 80px 104px;
+
   display: flex;
   align-items: center;
   gap: 56px;
+
   box-sizing: border-box;
-  max-width: 1440px;
 }
+
+/* =========================
+   IMAGE
+   ========================= */
 
 .about__image {
   width: 464px;
   height: 464px;
-  flex-shrink: 0;
+
+  flex: 0 0 464px;
+
   object-fit: cover;
   border-radius: 50%;
 }
 
+/* =========================
+   TEXT
+   ========================= */
+
 .about__text {
   flex: 1;
   max-width: 600px;
+
   font-family: "Roboto", Arial, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
 }
+
+/* =========================
+   TITLE
+   ========================= */
 
 .about__title {
   margin: 0 0 24px;
@@ -39,36 +66,114 @@
   font-size: 40px;
   line-height: 46px;
   letter-spacing: 0;
+
+  color: #1a1b22;
 }
+
+/* =========================
+   DESCRIPTION
+   ========================= */
 
 .about__description {
   margin: 0 0 16px;
 
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-  letter-spacing: 0;
+
+  color: #1a1b22;
 }
 
-.about__image-container {
-  flex: 0 0 464px;
+.about__description:last-child {
+  margin-bottom: 0;
 }
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media screen and (max-width: 1100px) {
+  .about__content {
+    padding: 60px 40px;
+    gap: 40px;
+  }
+
+  .about__image {
+    width: 360px;
+    height: 360px;
+    flex-basis: 360px;
+  }
+
+  .about__title {
+    font-size: 36px;
+    line-height: 42px;
+  }
+}
+
+/* =========================
+   MOBILE
+   ========================= */
 
 @media screen and (max-width: 768px) {
-  .about {
+  .about__content {
+    width: 100%;
+    min-height: auto;
+
+    padding: 60px 24px;
+
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
+
     gap: 32px;
-    padding: 60px 24px;
   }
 
   .about__image-container {
-    flex-basis: auto;
+    width: 100%;
+    flex: none;
+  }
+
+  .about__image {
     width: 280px;
+    height: 280px;
+    max-width: 100%;
+  }
+
+  .about__text {
+    width: 100%;
+    max-width: none;
   }
 
   .about__title {
     font-size: 32px;
+    line-height: 38px;
+  }
+
+  .about__description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+   ========================= */
+
+@media screen and (max-width: 480px) {
+  .about__content {
+    padding: 40px 16px;
+    gap: 24px;
+  }
+
+  .about__image {
+    width: 220px;
+    height: 220px;
+    flex-basis: 220px;
+  }
+
+  .about__title {
+    font-size: 30px;
+    line-height: 34px;
   }
 }

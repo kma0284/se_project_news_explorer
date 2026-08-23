@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 import headerImage from "../assets/header.svg";
 import SearchForm from "./SearchForm";
 import "../blocks/Header.css";
@@ -13,38 +14,72 @@ function Header({
   onRegister,
   isSavedNews,
 }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className={isSavedNews ? "header header_saved" : "header"}>
       <img className="header__image" src={headerImage} alt="header image" />
+
       <div className="header__content">
         <div className="header__top">
           <a className="header__logo" href="/">
             News Explorer
           </a>
 
-          <nav className="header__navigation">
+          {/* Mobile menu button */}
+          <button
+            className="header__menu-button"
+            type="button"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav
+            className={`header__navigation ${
+              isMenuOpen ? "header__navigation_open" : ""
+            }`}
+          >
             <NavLink
               className={({ isActive }) =>
                 `header__link ${isActive ? "header__link_active" : ""}`
               }
               to="/"
+              onClick={closeMenu}
             >
               Home
             </NavLink>
+
             {isLoggedIn && (
               <NavLink
                 className={({ isActive }) =>
                   `header__link ${isActive ? "header__link_active" : ""}`
                 }
                 to="/saved-news"
+                onClick={closeMenu}
               >
                 Saved articles
               </NavLink>
             )}
 
             {isLoggedIn ? (
-              <button className="header__user" type="button" onClick={onLogout}>
+              <button
+                className="header__user"
+                type="button"
+                onClick={() => {
+                  closeMenu();
+                  onLogout();
+                }}
+              >
                 <span>{currentUser?.name}</span>
+
                 <img
                   className="header__logout-icon"
                   src={logoutIcon}
@@ -56,7 +91,10 @@ function Header({
                 <button
                   className="header__sign-in"
                   type="button"
-                  onClick={onSignIn}
+                  onClick={() => {
+                    closeMenu();
+                    onSignIn();
+                  }}
                 >
                   Sign in
                 </button>
@@ -64,7 +102,10 @@ function Header({
                 <button
                   className="header__sign-up"
                   type="button"
-                  onClick={onRegister}
+                  onClick={() => {
+                    closeMenu();
+                    onRegister();
+                  }}
                 >
                   Sign up
                 </button>
