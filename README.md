@@ -1,16 +1,71 @@
-# React + Vite
+# News Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+News Explorer is a responsive frontend web application that allows users to search for current news articles, browse search results, and save articles to read later.
 
-Currently, two official plugins are available:
+## About the Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+News Explorer was built as part of my software engineering journey to practice building a complete React application that works with an external API.
 
-## React Compiler
+The application allows users to:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Search for news articles by topic
+- View current search results
+- See loading, error, and no-results states
+- Register and sign in
+- Save articles for later
+- View saved articles on a separate page
+- Delete saved articles
+- Use the application on desktop, tablet, and mobile devices
 
-## Expanding the ESLint configuration
+## Technologies
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- JavaScript
+- HTML5
+- CSS3
+- React Router
+- Vite
+- News API
+- Git & GitHub
+
+## Features
+
+### News Search
+
+Users can enter a topic into the search bar and retrieve related news articles from the news API.
+
+### Authentication
+
+Users can register and sign in through modal forms with input validation and user-friendly error messages.
+
+### Saved Articles
+
+Logged-in users can save articles and access them from the Saved Articles page.
+
+### Responsive Design
+
+The interface adapts to different screen sizes using CSS media queries, Flexbox, and CSS Grid.
+
+### User Feedback
+
+The application provides feedback for different states, including:
+
+- Loading
+- Successful search results
+- No search results
+- API errors
+- Invalid form input
+
+## Getting Started
+
+### Prerequisites
+
+Make sure you have Node.js installed on your computer.
+
+### Installation
+
+Clone the repository:
+
+
+project pitch
+https://www.loom.com/share/8dd8662ca552406b8a34939cec898ab2
