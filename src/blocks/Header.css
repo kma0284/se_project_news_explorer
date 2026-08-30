@@ -34,15 +34,19 @@
   transform: translate(-50%, -50%);
   text-align: left;
 }
-.header__title {
+.news-card__title {
   margin: 0 0 16px;
-  color: #fff;
+  color: #1a1b22;
   font-family: "Roboto Slab", serif;
   font-weight: 400;
-  font-size: 60px;
-  line-height: 64px;
+  font-size: 26px;
+  line-height: 30px;
   letter-spacing: 0;
-  text-align: left;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 .header__subtitle {
@@ -327,10 +331,6 @@
     overflow: visible;
   }
 
-  .header__image {
-    display: none;
-  }
-
   .header__content {
     width: 100%;
     height: auto;
@@ -344,8 +344,6 @@
     padding: 0 16px;
 
     box-sizing: border-box;
-
-    background-color: #000;
   }
 
   .header__top::after {

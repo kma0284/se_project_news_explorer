@@ -1,4 +1,4 @@
-import authorImage from "../assets/placeholder.svg";
+import authorImage from "../assets/placeholder.jpg";
 import "../blocks/About.css";
 
 function About() {

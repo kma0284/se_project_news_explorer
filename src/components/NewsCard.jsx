@@ -15,8 +15,13 @@ function NewsCard({
   const isSaved = savedArticles.some(
     (savedArticle) => savedArticle.url === article.url,
   );
-
-  const handleSave = () => {
+  const handleCardClick = () => {
+    if (article.url) {
+      window.open(article.url, "_blank", "noopener,noreferrer");
+    }
+  };
+  const handleSave = (event) => {
+    event.stopPropagation();
     if (!isLoggedIn) {
       onSignIn();
       return;
@@ -33,7 +38,7 @@ function NewsCard({
   };
 
   return (
-    <article className="news-card">
+    <article className="news-card" onClick={handleCardClick}>
       <div className="news-card__image-container">
         {article.urlToImage && (
           <img
@@ -82,7 +87,6 @@ function NewsCard({
           )}
         </button>
       </div>
-
       <div className="news-card__content">
         <p className="news-card__date">
           {new Date(article.publishedAt).toLocaleDateString("en-US", {

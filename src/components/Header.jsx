@@ -11,7 +11,6 @@ function Header({
   onSignIn,
   onLogout,
   onSearch,
-  onRegister,
   isSavedNews,
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -97,17 +96,6 @@ function Header({
                   }}
                 >
                   Sign in
-                </button>
-
-                <button
-                  className="header__sign-up"
-                  type="button"
-                  onClick={() => {
-                    closeMenu();
-                    onRegister();
-                  }}
-                >
-                  Sign up
                 </button>
               </>
             )}
