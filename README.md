@@ -64,8 +64,8 @@ Make sure you have Node.js installed on your computer.
 
 ### Installation
 
-Clone the repository:
-
+live site
+[News Explorer](https://kma0284.github.io/se_project_news_explorer/)
 
 project pitch
 https://www.loom.com/share/8dd8662ca552406b8a34939cec898ab2
