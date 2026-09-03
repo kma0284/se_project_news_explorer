@@ -2,15 +2,22 @@
   box-sizing: border-box;
 }
 
-html,
-body,
-#root {
-  width: 100%;
-  min-height: 100%;
+html {
   margin: 0;
   padding: 0;
 }
 
 body {
+  margin: 0 !important;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
   font-family: "Roboto", Arial, sans-serif;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
 }
