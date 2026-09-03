@@ -1,0 +1,345 @@
+/* =========================
+   MODAL OVERLAY
+   ========================= */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100vh;
+
+  padding: 20px;
+  box-sizing: border-box;
+
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* =========================
+   MODAL CONTENT
+   ========================= */
+
+.modal__content {
+  position: relative;
+
+  width: 430px;
+  max-width: calc(100vw - 32px);
+
+  padding: 40px 36px 36px;
+
+  box-sizing: border-box;
+
+  border-radius: 8px;
+
+  background-color: #fff;
+}
+
+/* =========================
+   CLOSE BUTTON
+   ========================= */
+
+.modal__close {
+  position: absolute;
+
+  top: -40px;
+  right: -40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  z-index: 1001;
+}
+
+.modal__close img {
+  display: block;
+
+  width: 24px;
+  height: 24px;
+
+  object-fit: contain;
+}
+
+.modal__close:hover {
+  opacity: 0.7;
+}
+
+/* =========================
+   FORM
+   ========================= */
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+/* =========================
+   TITLE
+   ========================= */
+
+.modal__title {
+  margin: 0 0 40px;
+
+  color: #1a1b22;
+
+  font-family: "Roboto Slab", serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 34px;
+}
+
+/* =========================
+   LABEL
+   ========================= */
+
+.modal__label {
+  margin: 0 0 8px;
+
+  color: #2f71e5;
+
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+}
+
+/* =========================
+   INPUT
+   ========================= */
+
+.modal__input {
+  width: 358px;
+  max-width: 100%;
+  height: 47px;
+
+  margin: 0 0 24px;
+  padding: 0;
+
+  box-sizing: border-box;
+
+  border: none;
+  border-bottom: 1px solid #000;
+  border-radius: 0;
+
+  background-color: transparent;
+  color: #1a1b22;
+
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 100%;
+
+  outline: none;
+}
+
+.modal__input::placeholder {
+  color: #000;
+  opacity: 0.2;
+}
+
+.modal__input:focus {
+  border: none;
+  border-bottom: 1px solid #000;
+
+  outline: none;
+  box-shadow: none;
+}
+
+.modal__input:invalid:not(:placeholder-shown) {
+  border: none;
+  border-bottom: 1px solid #d93025;
+}
+
+/* =========================
+   ERROR MESSAGE
+   ========================= */
+
+.modal__error {
+  width: 358px;
+  max-width: 100%;
+
+  margin: -12px 0 8px;
+
+  color: #d93025;
+
+  text-align: left;
+
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+}
+
+/* =========================
+   SUBMIT BUTTON
+   ========================= */
+
+.modal__submit {
+  width: 358px;
+  max-width: 100%;
+  height: 64px;
+
+  margin-top: 4px;
+  padding: 0;
+
+  border: none;
+  border-radius: 100px;
+
+  background-color: #2f71e5;
+  color: #fff;
+
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 100%;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.modal__submit:hover:not(:disabled) {
+  background-color: #347eff;
+}
+
+.modal__submit:disabled {
+  background-color: #e6e8eb;
+  color: #b6bcbf;
+
+  cursor: default;
+}
+
+/* =========================
+   SIGN IN / SIGN UP AREA
+   ========================= */
+
+.modal__switch-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  margin-top: 20px;
+
+  text-align: center;
+}
+
+.modal__switch-text {
+  margin: 0 8px 0 0;
+
+  color: #1a1b22;
+
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.modal__switch-button {
+  display: inline-block;
+
+  width: auto;
+  height: auto;
+
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  border-radius: 0;
+
+  background: transparent;
+  color: #2f71e5;
+
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.modal__switch-button:hover {
+  background: transparent;
+  color: #1a1b22;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media screen and (max-width: 500px) {
+  .modal {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: auto;
+
+    padding: 0;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal__content {
+    position: relative;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 36px 24px 32px;
+
+    box-sizing: border-box;
+
+    border-radius: 12px 12px 0 0;
+
+    background-color: #fff;
+  }
+
+  .modal__input,
+  .modal__submit,
+  .modal__error {
+    width: 100%;
+  }
+
+  .modal__close {
+    top: 16px;
+    right: 16px;
+  }
+
+  .modal__title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}

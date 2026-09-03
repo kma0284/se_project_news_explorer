@@ -1,0 +1,35 @@
+.modal__success {
+  width: 100%;
+}
+
+.modal__success .modal__title {
+  margin: 0 0 24px;
+}
+
+.modal__switch-button {
+  display: inline-block;
+
+  width: auto;
+  height: auto;
+
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  border-radius: 0;
+
+  background: transparent;
+  color: #2f71e5;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+
+  cursor: pointer;
+}
+
+.modal__success-link:hover {
+  background: transparent;
+  color: #1a1b22;
+}
