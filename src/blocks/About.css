@@ -33,7 +33,7 @@
 .about__image {
   width: 464px;
   height: 464px;
-
+  align-self: center;
   flex: 0 0 464px;
 
   object-fit: cover;
