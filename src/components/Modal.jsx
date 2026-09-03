@@ -39,7 +39,7 @@ function Modal({ isOpen, onClose, children }) {
           onClick={onClose}
           aria-label="Close modal"
         >
-          <img src={closeIcon} alt="" />
+          <img src={closeIcon} alt="close icon" />
         </button>
 
         {children}

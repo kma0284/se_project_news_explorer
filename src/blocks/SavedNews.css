@@ -1,16 +1,16 @@
 .saved-news {
   width: 100%;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: #f5f6f7;
 }
 
 .saved-news__header {
   width: 100%;
-  max-width: 1232px;
+  max-width: 1440px;
 
-  margin: 0 auto;
-  padding: 40px 0 50px;
-
+  /* margin: 0 40px 56px 0; */
+  padding: 40px 40px 50px;
+  background-color: #fff;
   box-sizing: border-box;
 }
 

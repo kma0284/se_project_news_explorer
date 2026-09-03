@@ -12,6 +12,8 @@ function Header({
   onLogout,
   onSearch,
   isSavedNews,
+  isModalOpen,
+  onCloseModal,
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -20,7 +22,11 @@ function Header({
   };
 
   return (
-    <header className={isSavedNews ? "header header_saved" : "header"}>
+    <header
+      className={`header ${isSavedNews ? "header_saved" : ""} ${
+        isMenuOpen ? "header_menu-open" : ""
+      }`}
+    >
       <img className="header__image" src={headerImage} alt="header image" />
 
       <div className="header__content">
@@ -33,9 +39,16 @@ function Header({
           <button
             className="header__menu-button"
             type="button"
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isMenuOpen}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isModalOpen || isMenuOpen ? "Close" : "Open menu"}
+            aria-expanded={isModalOpen || isMenuOpen}
+            onClick={() => {
+              if (isModalOpen) {
+                onCloseModal();
+                return;
+              }
+
+              setIsMenuOpen(!isMenuOpen);
+            }}
           >
             <span></span>
             <span></span>

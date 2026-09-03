@@ -292,14 +292,39 @@
 
 @media screen and (max-width: 500px) {
   .modal {
-    padding: 16px;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: auto;
+
+    padding: 0;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   .modal__content {
-    width: 100%;
-    max-width: calc(100vw - 32px);
+    position: relative;
 
+    width: 100%;
+    max-width: none;
+    height: 100%;
+
+    margin: 0;
     padding: 36px 24px 32px;
+
+    box-sizing: border-box;
+
+    border-radius: 12px 12px 0 0;
+
+    background-color: #fff;
   }
 
   .modal__input,
@@ -309,16 +334,8 @@
   }
 
   .modal__close {
-    top: -36px;
-    right: 0;
-
-    width: 32px;
-    height: 32px;
-  }
-
-  .modal__close img {
-    width: 24px;
-    height: 24px;
+    top: 16px;
+    right: 16px;
   }
 
   .modal__title {

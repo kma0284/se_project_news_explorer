@@ -50,7 +50,7 @@ function ModalWithForm({
           onClick={onClose}
           aria-label="Close modal"
         >
-          <img src={closeIcon} alt="" />
+          <img src={closeIcon} alt="close icon" />
         </button>
 
         <form className="modal__form" onSubmit={onSubmit} onInput={onInput}>

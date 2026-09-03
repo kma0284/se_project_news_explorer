@@ -1,7 +1,6 @@
 import { useState } from "react";
 import ModalWithForm from "./ModalWithForm";
 import { login } from "../utils/auth";
-import "../blocks/LoginModal.css";
 
 function LoginModal({ isOpen, onClose, onRegister, onLogin }) {
   const [errors, setErrors] = useState({

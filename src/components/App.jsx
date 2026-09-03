@@ -144,6 +144,8 @@ function App() {
         onSearch={handleSearch}
         onRegister={handleRegister}
         isSavedNews={location.pathname === "/saved-news"}
+        isModalOpen={activeModal !== null}
+        onCloseModal={handleCloseModal}
       />
 
       <div className="app__content">

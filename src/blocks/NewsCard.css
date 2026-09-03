@@ -2,14 +2,12 @@
   width: 100%;
   min-width: 0;
   height: 576px;
-
   background-color: #fff;
   overflow: visible;
-
   display: flex;
   flex-direction: column;
-
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 /* =========================

@@ -71,7 +71,7 @@ function NewsCard({
           <img
             className="news-card__save-icon"
             src={isSavedPage ? trashIcon : isSaved ? flagFilledIcon : flagIcon}
-            alt=""
+            alt="save icon"
           />
 
           {!isLoggedIn && !isSavedPage && (

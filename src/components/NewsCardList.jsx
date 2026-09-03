@@ -11,20 +11,21 @@ function NewsCardList({
   isSavedPage,
 }) {
   return (
-    <div className="news-card-list">
+    <ul className="news-card-list">
       {articles.map((article) => (
-        <NewsCard
-          key={article.url}
-          article={article}
-          isLoggedIn={isLoggedIn}
-          onSignIn={onSignIn}
-          savedArticles={savedArticles}
-          onSaveArticle={onSaveArticle}
-          onDeleteArticle={onDeleteArticle}
-          isSavedPage={isSavedPage}
-        />
+        <li className="news-card-list__item" key={article.url}>
+          <NewsCard
+            article={article}
+            isLoggedIn={isLoggedIn}
+            onSignIn={onSignIn}
+            savedArticles={savedArticles}
+            onSaveArticle={onSaveArticle}
+            onDeleteArticle={onDeleteArticle}
+            isSavedPage={isSavedPage}
+          />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 

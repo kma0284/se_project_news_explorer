@@ -1,6 +1,5 @@
 
 import { NavLink } from "react-router-dom";
-import "../blocks/Navigation.css";
 
 function Navigation({ isLoggedIn, currentUser, onSignIn, onLogout }) {
   return (

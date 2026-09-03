@@ -31,7 +31,7 @@ function SavedNews({
         .filter(Boolean),
     ),
   ];
-  const firstKeywords = keywords.slice(0, 3);
+  const firstKeywords = keywords.slice(0, 2);
   const otherCount = keywords.length - firstKeywords.length;
   const displayedKeywords =
     otherCount > 0
